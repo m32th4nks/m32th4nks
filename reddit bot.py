@@ -36,13 +36,13 @@ while True:
         try:
             #sees if comment has 'the goods', and if so replies with random 'Me too thanks'. This is where the magic happens
             if "Me too thanks" in comment.body or "me too thanks" in comment.body and comment.id not in comments_replied_to and comment.author != "m32th4nks" and comment.author != "me_too-thanks":
-                if(comment.author != "m32th4nks"):
-                    comments_replied_to.append(comment.id)
-                    print("Replied to comment " + comment.id + " by " + str(comment.author))
-                    with open ("comments_replied_to.txt", "a") as f:
-                        f.write(comment.id + "\n")
-                    comment.reply(random.choice(thanks))
+                comments_replied_to.append(comment.id)
+                print("Replied to comment " + comment.id + " by " + str(comment.author))
+                with open ("comments_replied_to.txt", "a") as f:
+                    f.write(comment.id + "\n")
+                comment.reply(random.choice(thanks))
 
+            #not necessary; prints all comments from stream
             if comment.id not in comments_replied_to:
                 print("---")
                 print(comment.body)
@@ -58,7 +58,8 @@ while True:
                 print("******")
                 print("Reply by: " + '"' + str(comment.author) + '"')
                 print("")
-                    
+
+        #good programming         
         except Exception as e:
             pass
 
