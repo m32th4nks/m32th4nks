@@ -47,4 +47,9 @@ thanks = ['Me too thanks',
           'ʍɛ ȶօօ ȶɦǟռӄֆ',
           'mє tσσ thαnks',
           '爪乇 ㄒㄖㄖ ㄒ卄卂几Ҝ丂',
-          '#M^m^m^m^m^m^m^m^m^m^m e^e^e^e^e^e^e^e^e^e^e^e^e^e &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; t^t^t^t^t^t^t^t^t^t^t^t^t^t^t^t o^o^o^o^o^o^o^o^o^o^o^o^o^o o^o^o^o^o^o^o^o^o^o^o^o^o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; t^t^t^t^t^t^t^t^t^t^t^t^t^t^t^t h^h^h^h^h^h^h^h^h^h^h^h^h^h a^a^a^a^a^a^a^a^a^a^a^a^a^a n^n^n^n^n^n^n^n^n^n^n^n^n^n k^k^k^k^k^k^k^k^k^k^k^k^k^k s^s^s^s^s^s^s^s^s^s^s^s^s^s^s']
+          '#M^m^m^m^m^m^m^m^m^m^m e^e^e^e^e^e^e^e^e^e^e^e^e^e &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; t^t^t^t^t^t^t^t^t^t^t^t^t^t^t^t o^o^o^o^o^o^o^o^o^o^o^o^o^o o^o^o^o^o^o^o^o^o^o^o^o^o &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; t^t^t^t^t^t^t^t^t^t^t^t^t^t^t^t h^h^h^h^h^h^h^h^h^h^h^h^h^h a^a^a^a^a^a^a^a^a^a^a^a^a^a n^n^n^n^n^n^n^n^n^n^n^n^n^n k^k^k^k^k^k^k^k^k^k^k^k^k^k s^s^s^s^s^s^s^s^s^s^s^s^s^s^s',
+          "Somebody once told *me too thanks* the world is gonna roll *me too thanks*. I ain't the sharpest tool in the shed. *She too thanks* was looking kind of dumb with *her too thanks* finger and her thumb. In the shape of an 'L' on *her too thanks* forehead",
+          "A B C D E F G, H I J K, L-M-N-O-P. Q R S, T U V, W X, Y and Z. Now you know your ABC's; next time wont you sing with *me too thanks*",
+          "*WOW*. Me and you are on *the exact. same. page.* I **cannot express how amazing this is!!1** *Me too thanks!!* ^^^you're ^^^great",
+          "Y'know, I wansn't really jivin' with whatever OP was spittin', but you really changed my mind. So I'm gonna have t' give y'all a good ol' me too thanks",
+          '']
