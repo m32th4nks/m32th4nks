@@ -26,9 +26,6 @@ print("Loaded 'comments_replied_to.txt'...")
 commentTally = 0
 replyTally = 0
 
-#subreddit = reddit.subreddit('me_irl')
-#subreddit = reddit.subreddit("me_irl+meirl+4chan+absolutelynotme_irl+2meirl4meirl+dankmemes+fellowkids+woof_irl+hentai_irl+mildlyinteresting+showerthoughts+teenagers+memes+gaming+wholesomememes+kenM+madlads+nintendoswitch+prequelmemes+memeeconomy+deepfriedmemes+blackpeopletwitter+coaxedintoasnafu+surrealmemes")
-#subreddit = reddit.subreddit("popular")
 subreddit = reddit.subreddit("all")
 print("Preparing to stream...")
 
@@ -40,40 +37,43 @@ for comment in subreddit.stream.comments():
         print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + str(comment.author))
     else:
         print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + str(comment.author) + " ******")
-    
-    if "Me too thanks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
-        comments_replied_to.append(str(comment.id))
-        with open ("comments_replied_to.txt", "a") as f:
-                f.write(comment.id + "\n")
 
-        comment.reply(random.choice(thanks))
-        print("")
-        print("*** Replied to comment " + comment.author.name)
-        print("")
-        
-        replyTally += 1
-        
-    elif "me too thanks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
-        comments_replied_to.append(str(comment.id))
-        with open ("comments_replied_to.txt", "a") as f:
-                f.write(comment.id + "\n")
+    try:
+        if "Me too thanks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
+            comments_replied_to.append(str(comment.id))
+            with open ("comments_replied_to.txt", "a") as f:
+                    f.write(comment.id + "\n")
 
-        comment.reply(random.choice(thanks))
-        print("")
-        print("Replied to comment " + comment.author.name)
-        print("")
-        
-        replyTally += 1
+            comment.reply(random.choice(thanks))
+            print("")
+            print("*** Replied to comment " + comment.author.name)
+            print("")
+            
+            replyTally += 1
+            
+        elif "me too thanks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
+            comments_replied_to.append(str(comment.id))
+            with open ("comments_replied_to.txt", "a") as f:
+                    f.write(comment.id + "\n")
 
-    elif "m32th4nks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
-        comments_replied_to.append(str(comment.id))
-        with open ("comments_replied_to.txt", "a") as f:
-                f.write(comment.id + "\n")
+            comment.reply(random.choice(thanks))
+            print("")
+            print("Replied to comment " + comment.author.name)
+            print("")
+            
+            replyTally += 1
 
-        comment.reply("Yup that's me ^^^too ^^^thanks")
-        print("")
-        print("Replied to comment " + comment.author.name)
-        print("")
-        
-        replyTally += 1
+        elif "m32th4nks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
+            comments_replied_to.append(str(comment.id))
+            with open ("comments_replied_to.txt", "a") as f:
+                    f.write(comment.id + "\n")
+
+            comment.reply("Yup that's me ^^^too ^^^thanks")
+            print("")
+            print("Replied to comment " + comment.author.name)
+            print("")
+            
+            replyTally += 1
+    except:
+        pass
     
