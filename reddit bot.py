@@ -34,10 +34,11 @@ for comment in subreddit.stream.comments():
     commentTally += 1
 
     if(comment.author != reddit.user.me()):
-        print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + '"' + str(comment.author) + '"')
+        print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + str(comment.author.name))
     else:
-        print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + '"' + str(comment.author) + '"' + " ******")
+        print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id  + " | " + str(comment.author.name) + " | " + " ******")
 
+    #try/except because attempting to comment in a banned sub will throw an error
     try:
         if "Me too thanks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
             comments_replied_to.append(str(comment.id))
@@ -45,9 +46,6 @@ for comment in subreddit.stream.comments():
                     f.write(comment.id + "\n")
 
             comment.reply(random.choice(thanks))
-            print("")
-            print("*** Replied to comment " + comment.author.name)
-            print("")
             
             replyTally += 1
             
@@ -57,9 +55,6 @@ for comment in subreddit.stream.comments():
                     f.write(comment.id + "\n")
 
             comment.reply(random.choice(thanks))
-            print("")
-            print("Replied to comment " + comment.author.name)
-            print("")
             
             replyTally += 1
 
