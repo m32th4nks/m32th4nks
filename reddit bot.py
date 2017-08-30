@@ -28,15 +28,15 @@ replyTally = 0
 
 subreddit = reddit.subreddit("all")
 print("Preparing to stream...")
+print("")
 
 for comment in subreddit.stream.comments():
-    
     commentTally += 1
 
     if(comment.author != reddit.user.me()):
-        print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + str(comment.author))
+        print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + '"' + str(comment.author) + '"')
     else:
-        print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + str(comment.author) + " ******")
+        print(str(commentTally) + ":" + str(replyTally) + " | " + comment.id + " | " + '"' + str(comment.author) + '"' + " ******")
 
     try:
         if "Me too thanks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
