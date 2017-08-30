@@ -40,13 +40,13 @@ for comment in subreddit.stream.comments():
 
     #try/except because attempting to comment in a banned sub will throw an error
     try:
+        
         if "Me too thanks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
             comments_replied_to.append(str(comment.id))
             with open ("comments_replied_to.txt", "a") as f:
                     f.write(comment.id + "\n")
 
             comment.reply(random.choice(thanks))
-            
             replyTally += 1
             
         elif "me too thanks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
@@ -55,7 +55,6 @@ for comment in subreddit.stream.comments():
                     f.write(comment.id + "\n")
 
             comment.reply(random.choice(thanks))
-            
             replyTally += 1
 
         elif "m32th4nks" in comment.body in comment.body and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
@@ -64,11 +63,8 @@ for comment in subreddit.stream.comments():
                     f.write(comment.id + "\n")
 
             comment.reply("Yup that's me ^^^too ^^^thanks")
-            print("")
-            print("Replied to comment " + comment.author.name)
-            print("")
-            
             replyTally += 1
+            
     except:
         pass
     
