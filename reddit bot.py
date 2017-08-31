@@ -4,6 +4,11 @@ import random
 
 import config
 import thanks
+import spit
+
+#TODO:
+#add add free ipad
+#add restart in internet out
 
 reddit = praw.Reddit(username = config.username,
                         password = config.password,
@@ -13,6 +18,7 @@ reddit = praw.Reddit(username = config.username,
 print("Logged into Reddit...")
 
 thanks = thanks.thanks
+spit = spit.spitfacts
 print("Loaded 'thanks.py...'")
 
 if not os.path.isfile("comments_replied_to.txt"):
@@ -45,7 +51,7 @@ for comment in subreddit.stream.comments():
         if "me too thanks" in comment.body.lower() in comment.body.lower() and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
             comments_replied_to.append(str(comment.id))
             with open ("comments_replied_to.txt", "a") as f:
-                    f.write(comment.id + "\n")
+                f.write(comment.id + "\n")
 
             comment.reply(random.choice(thanks))
             replyTally += 1
@@ -68,14 +74,32 @@ for comment in subreddit.stream.comments():
 
         elif "good bot" in comment.body.lower() in comment.body.lower() and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
             if comment.parent().author == reddit.user.me():
+                comments_replied_to.append(str(comment.id))
+                
+                with open ("comments_replied_to.txt", "a") as f:
+                    f.write(comment.id + "\n")
                 comment.reply("You humans make me so happy :')")
                 replyTally += 1 
 
         elif "bad bot" in comment.body.lower() in comment.body.lower() and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
             if comment.parent().author == reddit.user.me():
+                comments_replied_to.append(str(comment.id))
+                
+                with open ("comments_replied_to.txt", "a") as f:
+                    f.write(comment.id + "\n")
                 comment.reply("I-I didn't even like you anyways... ^:(")
+                replyTally += 1
+
+        elif "hit me with them spitfacts boi" in comment.body.lower() in comment.body.lower() and comment.author != reddit.user.me() and comment.id not in comments_replied_to:
+            if comment.parent().author == reddit.user.me():
+                comments_replied_to.append(str(comment.id))
+                
+                with open ("comments_replied_to.txt", "a") as f:
+                    f.write(comment.id + "\n")
+                comment.reply(random.choice(spit))
                 replyTally += 1
         
     except:
         pass
     
+
